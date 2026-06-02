@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🌤️ Weather Dashboard</h1>
+      <p>Real-time weather information from around the world</p>
+    </header>
+
+    <div class="search-section">
+      <input type="text" id="cityInput" placeholder="Search city (e.g., London, New York)">
+      <button onclick="searchCity()">Search</button>
+      <button onclick="getCurrentLocation()" class="btn-location">📍 Use Current Location</button>
+    </div>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+
+    <div class="weather-grid">
+      <div class="weather-card main-card" id="mainWeather">
+        <div class="spinner">Loading...</div>
+      </div>
+
+      <div class="forecast-section">
+        <h2>5-Day Forecast</h2>
+        <div class="forecast-grid" id="forecastGrid">
+          <div class="spinner">Loading forecast...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cities-section">
+      <h2>Saved Cities</h2>
+      <div class="cities-grid" id="citiesGrid">
+        <p>Add cities to your dashboard</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
